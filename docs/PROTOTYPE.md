@@ -8,8 +8,8 @@
 
 ## 2. Microsserviço de Coleta de Dados
 - [X] Criar um container em Docker para esse Microsserviço.
-- [ ] Desenvolver scripts Python para coleta de dados em tempo real e históricos usando APIs financeiras selecionadas.
-- [ ] Explorar e implementar soluções de armazenamento apropriadas para os dados coletados.
+- [X] Desenvolver scripts Python para coleta de dados em tempo real e históricos usando APIs financeiras selecionadas.
+- [X] Explorar e implementar soluções de armazenamento apropriadas para os dados coletados.
 - [ ] **API de Comunicação**: Criar uma API RESTful para disponibilizar os dados coletados para outros microsserviços.
 
 ## 3. Microsserviço de Decisão de Trading
