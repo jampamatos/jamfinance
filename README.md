@@ -39,4 +39,4 @@ For support, please open an issue on our GitHub repository or contact me directl
 Contributions are welcome! Please read the [contribuition guide](docs/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## License
-This project is licensed under the MIT License - [click here](docs/LICENSE.md) for details.
+This project is licensed under the MIT License - [click here](LICENSE.md) for details.
