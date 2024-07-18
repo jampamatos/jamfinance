@@ -1,12 +1,13 @@
 # To-Do List Detalhada para o MVP do Jamfinance
 
 ## 1. Configuração do Ambiente de Desenvolvimento
-- [ ] Configurar o WSL 2 e Docker no Windows para desenvolvimento e teste.
-- [ ] Estabelecer um repositório Git para controle de versão e colaboração.
-- [ ] Instalar e configurar todas as bibliotecas e frameworks necessários (Python, React, Flask, etc.).
-- [ ] Criar scripts de autoinstalação para facilitar a configuração do ambiente em novas máquinas.
+- [X] Configurar o WSL 2 e Docker no Windows para desenvolvimento e teste.
+- [X] Estabelecer um repositório Git para controle de versão e colaboração.
+- [X] Instalar e configurar todas as bibliotecas e frameworks necessários (Python, React, Flask, etc.).
+- [X] Criar scripts de autoinstalação para facilitar a configuração do ambiente em novas máquinas.
 
 ## 2. Microsserviço de Coleta de Dados
+- [X] Criar um container em Docker para esse Microsserviço.
 - [ ] Desenvolver scripts Python para coleta de dados em tempo real e históricos usando APIs financeiras selecionadas.
 - [ ] Explorar e implementar soluções de armazenamento apropriadas para os dados coletados.
 - [ ] **API de Comunicação**: Criar uma API RESTful para disponibilizar os dados coletados para outros microsserviços.
