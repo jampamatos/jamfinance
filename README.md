@@ -5,8 +5,10 @@ Jamfinance is a microservices-based day trading application designed to automate
 
 ## Project Structure
 - `data-collection/`: Microservice for collecting real-time and historical financial data.
-  - `data-collection/src/scripts/`: Contains the scripts for real-time and historical data collection. Scripts include advanced error handling, data validation, and environmental variable management for API keys.
-  - `data-collection/src/tests/`: Includes tests for validating the functionality and robustness of the data collection scripts. Tests ensure proper error handling, API response processing, and symbol validation.
+  - `src/`: Contains the source code for the data collection service.
+    - `scripts/`: Contains scripts for real-time and historical data collection. Scripts include advanced error handling, data validation, and use environment variables for API keys.
+    - `tests/`: Includes tests for validating the functionality and robustness of the data collection scripts and the API endpoints.
+  - `app.py`: Flask application that provides API endpoints for accessing real-time and historical data.
 - More directories will be added as the project develops.
 
 ## Environment Setup
@@ -27,6 +29,70 @@ docker run -p 5000:5000 --name dc-container data-collection-service
 ```
 
 Access the service at `http://localhost:5000/` to see a welcome message.
+
+## API Endpoints
+### Data Collection Service Endpoints
+The data collection service provides RESTful API endpoints to access real-time and historical financial data for specified stock symbols. Below are the available endpoints with their expected responses and functionalities:
+
+#### Real-time Data Endpoint
+- **Endpoint**: `/api/realtime/<sym>`
+- **Method**: GET
+- **Description**: Returns real-time financial data for a specified stock symbol.
+- **Parameters**:
+  - `sym` (string): Stock symbol for which real-time data is requested.
+- **Response Format**: JSON
+- **Example Request**:
+  ```bash
+  curl http://localhost:5000/api/realtime/AAPL
+  ```
+- **Example Response:**
+  ```json
+    {
+    "Time Series (5min)": {
+      "2024-07-24 16:00:00": {
+        "1. open": "150.10",
+        "2. high": "150.12",
+        "3. low": "149.90",
+        "4. close": "150.00",
+        "5. volume": "10457"
+      }
+    }
+  }
+  ```
+
+#### Historical Data Endpoint
+- **Endpoint:** `/api/historical/<sym>`
+- **Method:** GET
+- **Description:** Returns historical financial data for a specified stock symbol, formatted in JSON.
+- **Parameters:**
+  - `sym` (string): Stock symbol for which historical data is requested.
+- **Response Format:** JSON
+- **Example Request:**
+  ```bash
+  curl http://localhost:5000/api/historical/AAPL
+  ```
+- **Example Response:**
+  ```json
+  {
+    "columns": ["Date", "Open", "High", "Low", "Close", "Volume"],
+    "index": ["2024-07-23", "2024-07-22", "2024-07-21"],
+    "data": [
+      ["2024-07-23", 150.10, 155.20, 149.00, 154.90, 14000],
+      ["2024-07-22", 148.50, 150.00, 147.00, 149.50, 10000],
+      ["2024-07-21", 145.00, 150.00, 145.00, 148.00, 12000]
+    ]
+  }
+  ```
+### Error Handling
+A global error handler is implemented to manage exceptions and return appropriate error messages along with HTTP status codes. This ensures that any issues with API requests are communicated clearly to the user.
+
+#### Common HTTP Status Codes
+
+- **200 OK:** The request has succeeded and the response body contains the requested data.
+- **400 Bad Request:** The request could not be understood by the server due to malformed syntax or invalid parameters.
+- **500 Internal Server Error:** The server encountered an unexpected condition which prevented it from fulfilling the request.
+
+This detailed documentation of the API endpoints and error handling will help developers and users interact with the API more effectively, understanding what to expect in each scenario.
 
 ## Testing
 Testing is an integral part of ensuring the reliability of the Jamfinance services. Here's how you can run the tests:
