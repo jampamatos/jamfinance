@@ -14,7 +14,7 @@
 
 ## 3. Microsserviço de Decisão de Trading
 - [X] Criar um container em Docker para esse Microsserviço.
-- [ ] Elaborar um algoritmo completo de trading que priorize a segurança e minimização de riscos.
+- [X] Elaborar um algoritmo completo de trading que priorize a segurança e minimização de riscos.
     - **Estratégias de Trading para Minimização de Riscos**
         - **1. Médias Móveis Crossover:** Esta é uma das estratégias mais comuns e eficazes em trading algorítmico para identificar tendências. Você pode usar duas médias móveis: uma curta (por exemplo, 10 dias) e uma longa (por exemplo, 50 dias). A ideia é:
             - Comprar quando a média móvel curta cruza acima da média móvel longa, indicando uma tendência de alta.
@@ -27,8 +27,8 @@
         - **Estruturação do Código:** Organize o código de modo que cada estratégia de trading seja modular, permitindo fácil ajuste e expansão. Por exemplo, cada estratégia poderia ser uma função ou classe separada.
         - **Integração com Dados em Tempo Real e Históricos:** Assegure que o microsserviço de decisão de trading possa acessar dados em tempo real e históricos fornecidos pelo microsserviço de coleta de dados. Use esses dados para calcular indicadores e tomar decisões de trading.
         - **API para Decisões de Trading:** Implemente uma API que receba solicitações do microsserviço de execução de trades. A API deveria processar os dados, aplicar a lógica de trading e retornar decisões de compra ou venda.
-- [ ] **API de Comunicação**: Desenvolver uma API que receba dados do microsserviço de coleta e envie decisões de trading ao microsserviço de execução de trades.
-- [ ] Testar a integração das APIS de Decisão e Coleta.
+- [X] **API de Comunicação**: Desenvolver uma API que receba dados do microsserviço de coleta e envie decisões de trading ao microsserviço de execução de trades.
+- [X] Testar a integração das APIS de Decisão e Coleta.
 
 ## 4. Microsserviço de Execução de Trades
 - [ ] Implementar funcionalidades para a execução de ordens de compra e venda nas plataformas de corretagem.
