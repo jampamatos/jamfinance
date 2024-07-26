@@ -40,7 +40,7 @@ def calculate_rsi(data, window_size=14):
     
     return rsi
 
-def determine_trade_signals(data, short_window=10, long_window=50):
+def determine_trade_signals(data, short_window=1, long_window=2):
     """
     Determines trade signals based on moving averages and RSI.
     """
